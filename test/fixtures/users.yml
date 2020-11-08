@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+kosuke:
+  name: kosuke furuta
+  email: furu.2122@gmail.com
+  password_digest: <%= User.digest('furu2122') %>
+  
