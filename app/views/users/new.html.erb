@@ -1,23 +1,8 @@
 <% provide(:title, 'Sign up') %>
-<h1>ログイン</h1>
-
+<% provide(:button_text, 'Create my account') %>
+<h1>Sign up</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: signup_path) do |f| %>
-      <%= render 'shared/error_messages' %>
-      <%= f.label :名前 %>
-      <%= f.text_field :name, class: 'form-control' %>
-
-      <%= f.label :メールアドレス %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :パスワード %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "パスワード確認" %>
-      <%= f.password_field :password_confirmation, class: 'form-contorl' %>
-
-      <%= f.submit "アカウントを登録", class: "btm btn-primary" %>
-    <% end %>
-   </div>
+    <%= render 'form' %>
+  </div>
 </div>

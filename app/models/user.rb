@@ -7,7 +7,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false } # ユーザーの一意性
   has_secure_password                                     # データベースパスワード保存
-  validates :password, presence: true, length: { minimum:6 }
+  validates :password, presence: true, length: { minimum:6 }, allow_nil: true
 
   # 渡された文字列のハッシュ値を返す
   def self.digest(string)
@@ -34,7 +34,7 @@ class User < ApplicationRecord
   end
 
   # ユーザーのログイン情報を破棄する
-  def foget
+  def forget
     update_attribute(:remember_digest, nil)
   end
 end
